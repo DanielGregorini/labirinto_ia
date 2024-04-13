@@ -13,7 +13,7 @@ from algorithms.busca_gulosa import busca_gulosa
 from algorithms.a_estrela import a_estrela
 
 
-while True:
+'''while True:
     print("Selecione o mapa 1 ou 2: ")
     mapa_escolha = input()
 
@@ -35,18 +35,16 @@ while True:
     if algoritmo_escolha in ['1', '2', '3', '4']:
         break  # Sai do loop se a escolha for válida
     else:
-        print("Escolha inválida. Por favor, selecione uma das opções de algoritmo disponíveis.")
+        print("Escolha inválida. Por favor, selecione uma das opções de algoritmo disponíveis.")'''
 
 # Carrega o arquivo JSON do diretório atual
-with open('maps/mapa2.json') as arquivo:
+with open('maps/mapa3.json') as arquivo:
     dados = json.load(arquivo)
 
 ##print(dados)
 
-mapa = Criar_grafo_mapa(dados, 5, 5)
+mapa = Criar_grafo_mapa(dados, 8, 9)
 Printar_mapa(mapa)
-
-
 
 caminho_profunidade = busca_em_profundidade(Encontrar_node_inicial(mapa), Encontrar_node_objetivo(mapa))
 caminho_largura = busca_em_largura(mapa, Encontrar_node_inicial(mapa), Encontrar_node_objetivo(mapa))
@@ -69,7 +67,6 @@ if caminho_largura:
 else:
     print("Nenhum caminho encontrado")
 
-
 print()
 print("caminho_gulosa")
 if caminho_gulosa:
@@ -77,7 +74,6 @@ if caminho_gulosa:
         print(node.name)
 else:
     print("Nenhum caminho encontrado")
-
 
 print()
 print("Caminho estrela")

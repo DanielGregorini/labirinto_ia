@@ -13,7 +13,7 @@ def a_estrela(start, goal):
         # Remove o nó com o menor f_score da fila
         _, _, current_node = heapq.heappop(priority_queue)
 
-        print("NODE ATUAL:", current_node.name)
+        #print("NODE ATUAL:", current_node.name)
         if current_node == goal:
             # Reconstrói o caminho do objetivo até o início seguindo os pais
             path = []
@@ -37,7 +37,7 @@ def a_estrela(start, goal):
                         neighbor.actual_cost = tentative_g_score
                         f_score = tentative_g_score + neighbor.heuristic_cost
 
-                        print("Vizinho:", neighbor.name, "com f_score:", f_score)
+                        #print("Vizinho:", neighbor.name, "com f_score:", f_score)
                         # Adiciona ou atualiza o vizinho na fila de prioridade
                         heapq.heappush(priority_queue, (f_score, neighbor.name, neighbor))
     return None
