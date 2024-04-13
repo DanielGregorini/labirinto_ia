@@ -1,9 +1,9 @@
 class Node:
-    def __init__(self, name, heuristic_cost=0, type_ground='', cost_ground=0, is_agent=False, is_point=False, column = 0, row= 0):
+    def __init__(self, name: str, heuristic_cost=0, type_ground='', cost_ground=0, is_agent=False, is_point=False, column = 0, row= 0):
         self.name = name
         
-        self.column = column
-        self.row = row
+        self.column: int = column
+        self.row: int = row
         
         self.type_ground = type_ground
         self.cost_ground = cost_ground
@@ -14,18 +14,19 @@ class Node:
         self.heuristic_cost = heuristic_cost
         self.actual_cost = float('inf')
         self.parent = None
-        self.neighbor_north = None  # Inicialize os vizinhos como None
-        self.neighbor_south = None
+        
+        self.neighbor_top = None  # Inicialize os vizinhos como None
+        self.neighbor_down = None
         self.neighbor_left = None
         self.neighbor_right = None
 
     def add_neighbor(self, orientation: str, neighbor):
-        if orientation == 'north':
-            self.neighbor_north = neighbor
-            neighbor.add_neighbor_reverse('south', self)
-        elif orientation == 'south':
-            self.neighbor_south = neighbor
-            neighbor.add_neighbor_reverse('north', self)
+        if orientation == 'top':
+            self.neighbor_top = neighbor
+            neighbor.add_neighbor_reverse('down', self)
+        elif orientation == 'down':
+            self.neighbor_down = neighbor
+            neighbor.add_neighbor_reverse('top', self)
         elif orientation == 'right':
             self.neighbor_right = neighbor
             neighbor.add_neighbor_reverse('left', self)
@@ -34,11 +35,38 @@ class Node:
             neighbor.add_neighbor_reverse('right', self)
 
     def add_neighbor_reverse(self, orientation, neighbor):
-        if orientation == 'north':
-            self.neighbor_north = neighbor
-        elif orientation == 'south':
-            self.neighbor_south = neighbor
+        if orientation == 'top':
+            self.neighbor_top = neighbor
+        elif orientation == 'down':
+            self.neighbor_down = neighbor
         elif orientation == 'right':
             self.neighbor_right = neighbor
         elif orientation == 'left':
             self.neighbor_left = neighbor
+            
+    def get_neighbors_profundidade(self):
+        vizinhos = []
+        if self.neighbor_down and self.neighbor_down.type_ground != "parede":
+            vizinhos.append(self.neighbor_down)
+        if self.neighbor_left and self.neighbor_left.type_ground != "parede":
+            vizinhos.append(self.neighbor_left)
+        if self.neighbor_right and self.neighbor_right.type_ground != "parede":
+            vizinhos.append(self.neighbor_right)  
+        if self.neighbor_top and self.neighbor_top.type_ground != "parede":
+            vizinhos.append(self.neighbor_top)
+                    
+        return vizinhos
+    
+    def get_neighbors_largura(self):
+        vizinhos = []
+        if self.neighbor_right and self.neighbor_right.type_ground != "parede":
+            vizinhos.append(self.neighbor_right) 
+        if self.neighbor_left and self.neighbor_left.type_ground != "parede":
+            vizinhos.append(self.neighbor_left)
+        if self.neighbor_down and self.neighbor_down.type_ground != "parede":
+            vizinhos.append(self.neighbor_down)
+        if self.neighbor_top and self.neighbor_top.type_ground != "parede":
+            vizinhos.append(self.neighbor_top)
+                    
+        return vizinhos
+

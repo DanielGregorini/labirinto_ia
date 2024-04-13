@@ -13,8 +13,8 @@ def print_node_and_neighbors(node):
     print(f"    É agente: {node.is_agent}")
     print(f"    É ponto: {node.is_point}")
     print(f"  Vizinhos:")
-    print(f"    Vizinho ao Norte: {node.neighbor_north.name if node.neighbor_north else None}")
-    print(f"    Vizinho ao Sul: {node.neighbor_south.name if node.neighbor_south else None}")
+    print(f"    Vizinho a Cima: {node.neighbor_top.name if node.neighbor_top else None}")
+    print(f"    Vizinho e Baixo: {node.neighbor_down.name if node.neighbor_down else None}")
     print(f"    Vizinho à Esquerda: {node.neighbor_left.name if node.neighbor_left else None}")
     print(f"    Vizinho à Direita: {node.neighbor_right.name if node.neighbor_right else None}")
     print()
@@ -77,15 +77,15 @@ def Criar_grafo_mapa(mapa, columns, rows):
         
         # Adiciona vizinho ao Norte
         if row > 1:
-            neighbor_north = next((n for n in grafo if n.column == column and n.row == row - 1), None)
-            if neighbor_north:
-                node.add_neighbor('north', neighbor_north)
+            neighbor_top = next((n for n in grafo if n.column == column and n.row == row - 1), None)
+            if neighbor_top:
+                node.add_neighbor('top', neighbor_top)
         
         # Adiciona vizinho ao Sul
         if row < rows:
-            neighbor_south = next((n for n in grafo if n.column == column and n.row == row + 1), None)
-            if neighbor_south:
-                node.add_neighbor('south', neighbor_south)
+            neighbor_down = next((n for n in grafo if n.column == column and n.row == row + 1), None)
+            if neighbor_down:
+                node.add_neighbor('down', neighbor_down)
         
         # Adiciona vizinho à Esquerda
         if column > 1:
@@ -99,8 +99,9 @@ def Criar_grafo_mapa(mapa, columns, rows):
             if neighbor_right:
                 node.add_neighbor('right', neighbor_right)   
        
-    #print_matriz(matriz_grafo)
-    #for node in grafo:
-        #print_node_and_neighbors(node)
+    print_matriz(matriz_grafo)
+    print()
+    for node in grafo:
+        print_node_and_neighbors(node)
     
     return matriz_grafo

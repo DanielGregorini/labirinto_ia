@@ -1,0 +1,185 @@
+{
+    "n_1_1": {
+        "name": "n_1_1",
+        "type_ground": "parede",
+        "cost_ground": 999999,
+        "row": 1,
+        "column": 1
+    },
+    "n_1_2": {
+        "name": "n_1_2",
+        "type_ground": "parede",
+        "cost_ground": 999999,
+        "row": 1,
+        "column": 2
+    },
+    "n_1_3": {
+        "name": "n_1_3",
+        "type_ground": "parede",
+        "cost_ground": 999999,
+        "row": 1,
+        "column": 3
+    },
+    "n_1_4": {
+        "name": "n_1_4",
+        "type_ground": "parede",
+        "cost_ground": 999999,
+        "row": 1,
+        "column": 4
+    },
+    "n_1_5": {
+        "name": "n_1_5",
+        "type_ground": "parede",
+        "cost_ground": 999999,
+        "row": 1,
+        "column": 5
+    },
+    "n_2_1": {
+        "name": "n_2_1",
+        "type_ground": "parede",
+        "cost_ground": 999999,
+        "row": 2,
+        "column": 1
+    },
+    "n_2_2": {
+        "name": "n_2_2",
+        "type_ground": "solido_e_plano",
+        "cost_ground": 1,
+        "row": 2,
+        "column": 2,
+        "is_agent": true,
+        "self.is_point": false
+    },
+    "n_2_3": {
+        "name": "n_2_3",
+        "type_ground": "arenoso",
+        "cost_ground": 4,
+        "row": 2,
+        "column": 3
+    },
+    "n_2_4": {
+        "name": "n_2_4",
+        "type_ground": "solido_e_plano",
+        "cost_ground": 1,
+        "row": 2,
+        "column": 4
+    },
+    "n_2_5": {
+        "name": "n_2_5",
+        "type_ground": "parede",
+        "cost_ground": 999999,
+        "row": 2,
+        "column": 5
+    },
+    "n_3_1": {
+        "name": "n_3_1",
+        "type_ground": "parede",
+        "cost_ground": 999999,
+        "row": 3,
+        "column": 1
+    },
+    "n_3_2": {
+        "name": "n_3_2",
+        "type_ground": "rochoso",
+        "cost_ground": 10,
+        "row": 3,
+        "column": 2
+    },
+    "n_3_3": {
+        "name": "n_3_3",
+        "type_ground": "parede",
+        "cost_ground": 999999,
+        "row": 3,
+        "column": 3
+    },
+    "n_3_4": {
+        "name": "n_3_4",
+        "type_ground": "rochoso",
+        "cost_ground": 10,
+        "row": 3,
+        "column": 4
+    },
+    "n_3_5": {
+        "name": "n_3_5",
+        "type_ground": "parede",
+        "cost_ground": 999999,
+        "row": 3,
+        "column": 5
+    },
+    "n_4_1": {
+        "name": "n_4_1",
+        "type_ground": "parede",
+        "cost_ground": 999999,
+        "row": 4,
+        "column": 1
+    },
+    "n_4_2": {
+        "name": "n_4_2",
+        "type_ground": "arenoso",
+        "cost_ground": 4,
+        "row": 4,
+        "column": 2
+    },
+    "n_4_3": {
+        "name": "n_4_3",
+        "type_ground": "parede",
+        "cost_ground": 1,
+        "row": 4,
+        "column": 3
+    },
+    "n_4_4": {
+        "name": "n_4_4",
+        "type_ground": "arenoso",
+        "cost_ground": 4,
+        "row": 4,
+        "column": 4,
+        "is_agent": false,
+        "self.is_point": false
+    },
+    "n_4_5": {
+        "name": "n_4_5",
+        "type_ground": "parede",
+        "cost_ground": 999999,
+        "is_agent": false,
+        "self.is_point": false,
+        "row": 4,
+        "column": 5
+    },
+    "n_5_1": {
+        "name": "n_5_1",
+        "type_ground": "parede",
+        "cost_ground": 999999,
+        "row": 5,
+        "column": 1
+    },
+    "n_5_2": {
+        "name": "n_5_2",
+        "type_ground": "rochoso",
+        "cost_ground": 10,
+        "row": 5,
+        "column": 2
+    },
+    "n_5_3": {
+        "name": "n_5_3",
+        "type_ground": "pantano",
+        "cost_ground": 20,
+        "row": 5,
+        "column": 3
+    },
+    "n_5_4": {
+        "name": "n_5_4",
+        "type_ground": "arenoso",
+        "cost_ground": 4,
+        "row": 5,
+        "column": 4,
+        "is_agent": false,
+        "self.is_point": true
+    },
+    "n_5_5": {
+        "name": "n_5_5",
+        "type_ground": "parede",
+        "cost_ground": 999999,
+        "row": 5,
+        "column": 5
+    }
+}
