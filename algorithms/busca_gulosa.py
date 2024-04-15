@@ -1,6 +1,7 @@
-import heapq
 
-def busca_gulosa(start, goal):
+from config.imports import *
+
+def busca_gulosa(start: Node, goal):
     # Cria uma fila de prioridade e adiciona o nó inicial com custo heurístico e nome como critério de desempate
     priority_queue = [(start.heuristic_cost, start.name, start)]
     visited = set()
@@ -9,8 +10,8 @@ def busca_gulosa(start, goal):
         # Obtém o nó com o menor custo heurístico
         current_cost, _, current_node = heapq.heappop(priority_queue)
 
-        #print("NODE ATUAL", current_node.name)
-        if current_node == goal:
+        print("NODE ATUAL", current_node.name)
+        if current_node in goal:
             # Se o nó atual é o objetivo, reconstruímos o caminho
             path = []
             while current_node is not None:
@@ -23,7 +24,7 @@ def busca_gulosa(start, goal):
 
             for neighbor in current_node.get_neighbors_profundidade():
                 if neighbor not in visited:
-                    #print("Vizinho:", neighbor.name)
+                    print("   Vizinho:", neighbor.name)
                     neighbor.parent = current_node
                     # Adiciona o vizinho na fila de prioridade com seu custo heurístico e nome como critério de desempate
                     heapq.heappush(priority_queue, (neighbor.heuristic_cost, neighbor.name, neighbor))

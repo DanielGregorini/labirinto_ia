@@ -1,5 +1,5 @@
 class Node:
-    def __init__(self, name: str, heuristic_cost=0, type_ground='', cost_ground=0, is_agent=False, is_point=False, column = 0, row= 0):
+    def __init__(self, name: str, heuristic_cost:float=0, type_ground='', cost_ground:float=0, is_agent = False, is_point:bool = False, column:int = 0, row:int = 0):
         self.name = name
         
         self.column: int = column
@@ -14,8 +14,8 @@ class Node:
         self.heuristic_cost = heuristic_cost
         self.actual_cost = float('inf')
         self.parent = None
-        
-        self.neighbor_top = None  # Inicialize os vizinhos como None
+     
+        self.neighbor_top = None 
         self.neighbor_down = None
         self.neighbor_left = None
         self.neighbor_right = None
@@ -46,15 +46,14 @@ class Node:
             
     def get_neighbors_profundidade(self):
         vizinhos = []
-        if self.neighbor_down and self.neighbor_down.type_ground != "parede":
-            vizinhos.append(self.neighbor_down)
         if self.neighbor_left and self.neighbor_left.type_ground != "parede":
             vizinhos.append(self.neighbor_left)
+        if self.neighbor_down and self.neighbor_down.type_ground != "parede":
+            vizinhos.append(self.neighbor_down)
         if self.neighbor_right and self.neighbor_right.type_ground != "parede":
             vizinhos.append(self.neighbor_right)  
         if self.neighbor_top and self.neighbor_top.type_ground != "parede":
-            vizinhos.append(self.neighbor_top)
-                    
+            vizinhos.append(self.neighbor_top)   
         return vizinhos
     
     def get_neighbors_largura(self):
@@ -66,7 +65,5 @@ class Node:
         if self.neighbor_down and self.neighbor_down.type_ground != "parede":
             vizinhos.append(self.neighbor_down)
         if self.neighbor_top and self.neighbor_top.type_ground != "parede":
-            vizinhos.append(self.neighbor_top)
-                    
+            vizinhos.append(self.neighbor_top)    
         return vizinhos
-

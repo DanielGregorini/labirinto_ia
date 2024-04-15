@@ -1,13 +1,13 @@
-from collections import deque
+from config.imports import *
 
-def busca_em_largura(grafo, start, goal):
+def busca_em_largura(start:Node, goal):
     fila = deque([(start, [])])  # Inicializa a fila com o nó inicial e o caminho percorrido até ele
     visitados = set()
 
     while fila:
         current_node, path = fila.popleft()
         #print(current_node.name)
-        if current_node == goal:
+        if current_node in goal:
             # Se o nó atual é o objetivo, retorna o caminho até ele
             return path + [current_node]
 

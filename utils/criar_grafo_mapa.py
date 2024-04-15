@@ -1,4 +1,4 @@
-from classes.node import Node
+from config.imports import *
 
 def print_matriz(matriz):
     for row in matriz:
@@ -19,32 +19,7 @@ def print_node_and_neighbors(node):
     print(f"    Vizinho à Direita: {node.neighbor_right.name if node.neighbor_right else None}")
     print()
 
-def Criar_grafo_mapa(mapa, columns, rows):
-    grafo = []  # Lista para armazenar os objetos Node correspondentes
-    
-    for name_node, props in mapa.items():
-        # Extrai as propriedades do nó do JSON
-        name = props["name"]
-        heuristic_cost = props.get("heuristic_cost", 0)
-        type_ground = props.get("type_ground", "")
-        cost_ground = props.get("cost_ground", 0)
-        is_agent = props.get("is_agent", False)
-        is_point = props.get("self.is_point", False)
-        column = props.get("column", 0)
-        row = props.get("row", 0)
-        
-        # Cria um objeto Node com as propriedades extraídas
-        node = Node(name, heuristic_cost, type_ground, cost_ground, is_agent, is_point, column, row)
-        
-        # Adiciona o nó à lista
-        grafo.append(node)
-    
-    # Adiciona os vizinhos de cada nó
-    for node in grafo:
-        column = node.column
-  
-
-def Criar_grafo_mapa(mapa, columns, rows):
+def criar_grafo_mapa(mapa, rows:int, columns:int):
     grafo = []  # Lista para armazenar os objetos Node correspondentes
     
     for name_node, props in mapa.items():

@@ -1,4 +1,4 @@
-from classes.node import Node
+from config.imports import *
 
 def Printar_mapa(mapa):
     # Função para mapear o tipo de terreno para um símbolo
