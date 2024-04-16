@@ -77,7 +77,7 @@ while all_point:
         time.sleep(2)  
             
     #pausa para mostrar o caminho
-    time.sleep(0)    
+    time.sleep(1)    
         
     #mudando o incio do agente para o local do ponto achado
     inicio = caminho[-1]
@@ -120,7 +120,7 @@ while all_point:
         time.sleep(2) 
             
     #pausa para mostrar o caminho
-    time.sleep(0)    
+    time.sleep(1)    
         
     #mudando o incio do agente para o local do ponto achado
     inicio = caminho[-1]
@@ -202,10 +202,10 @@ while all_point:
     else:
         print("Nenhum caminho encontrado")
             
-        #pausa para mostrar o caminho
-    time.sleep(0)    
+    #pausa para mostrar o caminho
+    time.sleep(1)    
         
-        #mudando o incio do agente para o local do ponto achado
+    #mudando o incio do agente para o local do ponto achado
     inicio = caminho[-1]
     #removendo o ponto achado
     all_point.remove(caminho[-1])
