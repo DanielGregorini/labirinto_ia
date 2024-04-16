@@ -1,6 +1,6 @@
 from config.imports import *
 
-def a_estrela(start: Node, goal):
+def a_estrela(start: Node, goal: list[Node], secondary: list[Node]):
     # Fila de prioridade para os nós a serem explorados, iniciando com o nó inicial
     # Cada entrada na fila tem o formato: (f_score, nome do nó, node)
     priority_queue = []

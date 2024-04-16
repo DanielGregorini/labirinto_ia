@@ -1,5 +1,6 @@
+
 class Node:
-    def __init__(self, name: str, heuristic_cost:float=0, type_ground='', cost_ground:float=0, is_agent = False, is_point:bool = False, column:int = 0, row:int = 0):
+    def __init__(self, name: str, heuristic_cost:float=0, type_ground='', cost_ground:float=0, is_agent = False, is_point:bool = False, is_secondary:bool = False, column:int = 0, row:int = 0):
         self.name = name
         
         self.column: int = column
@@ -10,6 +11,7 @@ class Node:
         
         self.is_agent = is_agent
         self.is_point = is_point
+        self.is_secondary = is_secondary
         
         self.heuristic_cost = heuristic_cost
         self.actual_cost = float('inf')

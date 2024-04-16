@@ -13,7 +13,7 @@ from classes.node import Node
 # Importações das funções utilitárias
 from utils.printar_mapa import Printar_mapa
 from utils.criar_grafo_mapa import criar_grafo_mapa
-from utils.encontrar_inicio import encontrar_node_inicial, encontrar_node_objetivo, encontrar_node_objetivo_lista
+from utils.encontrar_inicio import encontrar_node_inicial, encontrar_node_objetivo, encontrar_node_objetivo_lista, encontrar_node_objetivo_secundario_lista
 from utils.mostrar_caminho import mostrar_caminho
 from utils.limpar_node_parente import limpar_node_parente
 from utils.custo_caminho import custo_caminho

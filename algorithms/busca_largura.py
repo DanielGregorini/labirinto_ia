@@ -1,6 +1,6 @@
 from config.imports import *
 
-def busca_em_largura(start:Node, goal):
+def busca_em_largura(start:Node, goal: list[Node], secondary: list[Node]):
     fila = deque([(start, [])])  # Inicializa a fila com o nó inicial e o caminho percorrido até ele
     visitados = set()
 

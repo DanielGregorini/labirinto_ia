@@ -12,6 +12,7 @@ def print_node_and_neighbors(node):
     print(f"    Custo do terreno: {node.cost_ground}")
     print(f"    É agente: {node.is_agent}")
     print(f"    É ponto: {node.is_point}")
+    print(f"    É secundario: {node.is_secondary}")
     print(f"  Vizinhos:")
     print(f"    Vizinho a Cima: {node.neighbor_top.name if node.neighbor_top else None}")
     print(f"    Vizinho e Baixo: {node.neighbor_down.name if node.neighbor_down else None}")
@@ -29,12 +30,13 @@ def criar_grafo_mapa(mapa, rows:int, columns:int):
         type_ground = props.get("type_ground", "")
         cost_ground = props.get("cost_ground", 0)
         is_agent = props.get("is_agent", False)
-        is_point = props.get("self.is_point", False)
+        is_point = props.get("is_point", False)
+        is_secondary = props.get("is_secondary", False)
         column = props.get("column", 0)
         row = props.get("row", 0)
         
         # Cria um objeto Node com as propriedades extraídas
-        node = Node(name, heuristic_cost, type_ground, cost_ground, is_agent, is_point, column, row)
+        node = Node(name, heuristic_cost, type_ground, cost_ground, is_agent, is_point, is_secondary, column, row)
         
         # Adiciona o nó à lista
         grafo.append(node)

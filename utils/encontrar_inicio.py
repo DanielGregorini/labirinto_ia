@@ -7,7 +7,6 @@ def encontrar_node_inicial(grafo):
                 return node
     return None
 
-
 def encontrar_node_objetivo(grafo):
     for linha in grafo:
         for node in linha:
@@ -21,5 +20,13 @@ def encontrar_node_objetivo_lista(grafo):
     for linha in grafo:
         for node in linha:
             if node.is_point:
+                nodes.append(node) 
+    return nodes
+
+def encontrar_node_objetivo_secundario_lista(grafo):
+    nodes = []
+    for linha in grafo:
+        for node in linha:
+            if node.is_secondary:
                 nodes.append(node) 
     return nodes

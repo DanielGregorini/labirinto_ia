@@ -1,6 +1,6 @@
 from config.imports import *
 
-def busca_em_profundidade(start: Node, goal):
+def busca_em_profundidade(start: Node, goal, secondary):
     stack = [start]
     visited = set()
 

@@ -1,7 +1,7 @@
 
 from config.imports import *
 
-def busca_gulosa(start: Node, goal):
+def busca_gulosa(start: Node, goal: list[Node], secondary: list[Node]):
     # Cria uma fila de prioridade e adiciona o nó inicial com custo heurístico e nome como critério de desempate
     priority_queue = [(start.heuristic_cost, start.name, start)]
     visited = set()
