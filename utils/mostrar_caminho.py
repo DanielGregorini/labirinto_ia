@@ -6,7 +6,7 @@ def mostrar_caminho(mapa, caminho):
     
     for node in caminho:
         node.is_agent = True
-        time.sleep(1)
+        time.sleep(0.3)
         os.system('cls')
         Printar_mapa(mapa)
         node.is_agent = False

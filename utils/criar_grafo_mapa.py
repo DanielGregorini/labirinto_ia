@@ -78,7 +78,7 @@ def criar_grafo_mapa(mapa, rows:int, columns:int):
        
     print_matriz(matriz_grafo)
     print()
-    for node in grafo:
-        print_node_and_neighbors(node)
+    #for node in grafo:
+        #print_node_and_neighbors(node)
     
     return matriz_grafo

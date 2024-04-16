@@ -17,6 +17,7 @@ from utils.encontrar_inicio import encontrar_node_inicial, encontrar_node_objeti
 from utils.mostrar_caminho import mostrar_caminho
 from utils.limpar_node_parente import limpar_node_parente
 from utils.custo_caminho import custo_caminho
+from utils.carregar_mapa import carregar_mapa
 
 # Importações dos algoritmos
 from algorithms.busca_profundidade import busca_em_profundidade
