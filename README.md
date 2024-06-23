@@ -20,4 +20,5 @@ O Projeto Labirinto IA é uma aplicação de inteligência artificial destinada 
 ## Como Usar
 1. Clone o repositório.
 2. Execute o arquivo `main.py` para iniciar a aplicação.
-3. Escolha o mapa.
+```bash
+python main.py
