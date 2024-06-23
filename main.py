@@ -213,5 +213,5 @@ print(f"Tempo de execução: {tempo_total_gulosa:.5} segundos")
 print(f"Quantidade pontos: {pontos_total_gulosa}\n")
 
 print("CUSTO TOTAL do algortimo busca A*: ",custo_total_a_estrela)
-print(f"Tempo de execução: {tempo_total_a_estrela:.5}segundos")  
+print(f"Tempo de execução: {tempo_total_a_estrela:.5}  segundos")  
 print(f"Quantidade pontos: {pontos_total_a_estrela}\n") 
