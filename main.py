@@ -3,6 +3,7 @@ from config.imports import *
 #valor de cada ponto secundario
 value_secondary: float = 1
 
+#menu de seleção de mapa
 while True:
     print("Selecione o mapa 1 a 4: ")
     mapa_escolha = input()
@@ -25,18 +26,23 @@ all_secundary:list[Node] = encontrar_node_objetivo_secundario_lista(mapa)
 inicio:Node = encontrar_node_inicial(mapa)
 
 #variaveis de controle de custo, tempo e pontos
+
+#largura
 tempo_total_largura: float = 0
 custo_total_largura: float = 0
 pontos_total_largura: int = 0
 
+#profundidade
 tempo_total_profundidade: float = 0
 custo_total_profundidade: float = 0
 pontos_total_profundidade: int = 0
 
+#gulosa
 tempo_total_gulosa: float = 0
 custo_total_gulosa: float = 0
 pontos_total_gulosa: int = 0
 
+#a_estrela
 tempo_total_a_estrela: float = 0
 custo_total_a_estrela: float = 0
 pontos_total_a_estrela: int = 0
@@ -71,15 +77,16 @@ while all_point:
     all_point.remove(caminho[-1])
 
     custo_total_largura += custo_caminho(caminho)
-    mostrar_caminho(mapa, caminho)
+    mostrar_caminho(mapa, caminho, "Busca em largura")
     limpar_node_parente(mapa)
 
 
+#carrega o mapa
 mapa = carregar_mapa(mapa_escolha)    
 #todos os objetivos
 all_point:Node = encontrar_node_objetivo_lista(mapa)
 #todos os objetivos secundarios
-all_secundary = encontrar_node_objetivo_secundario_lista(mapa)
+all_secundary: list[Node] = encontrar_node_objetivo_secundario_lista(mapa)
 #o local de inicio de agente
 inicio:Node = encontrar_node_inicial(mapa)
 
@@ -114,7 +121,7 @@ while all_point:
     all_point.remove(caminho[-1])
 
     custo_total_profundidade += custo_caminho(caminho)
-    mostrar_caminho(mapa, caminho)
+    mostrar_caminho(mapa, caminho, "Busca em profundidade")
     limpar_node_parente(mapa)
 
 mapa = carregar_mapa(mapa_escolha)    
@@ -155,7 +162,7 @@ while all_point:
     all_point.remove(caminho[-1])
 
     custo_total_gulosa += custo_caminho(caminho)
-    mostrar_caminho(mapa, caminho)
+    mostrar_caminho(mapa, caminho, "Busca gulosa")
         
     limpar_node_parente(mapa)
   
@@ -197,7 +204,8 @@ while all_point:
     all_point.remove(caminho[-1])
 
     custo_total_a_estrela += custo_caminho(caminho)
-    mostrar_caminho(mapa, caminho)
+
+    mostrar_caminho(mapa, caminho, "A*")
     limpar_node_parente(mapa)
         
 print("CUSTO TOTAL do algortimo busca em largura: ", custo_total_largura)
